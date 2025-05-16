@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools Showcase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <section id="home">
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="assets/215500_small.mp4" type="video/mp4">
+  </video>
+  <div class="home-content">
+    <h1>Explore Powerful AI Tools</h1>
+    <p>Empowering innovation through cutting-edge AI solutions</p>
+  </div>
+</section>
+  <!-- Tools Section -->
+  <section id="tools">
+    <h2>Explore AI Tools</h2>
+    <div class="carousel-wrapper">
+      <span class="arrow left" onclick="prevCard()">&#10094;</span>
+      <div class="carousel" id="carousel">
+        <!-- Cards will be inserted by JavaScript -->
+      </div>
+      <span class="arrow right" onclick="nextCard()">&#10095;</span>
+    </div>
+  </section>
+  <!-- About & Contact Section -->
+  <section id="about">
+    <h2>About</h2>
+    <p>This website showcases top AI tools revolutionizing the world. Created by an AI enthusiast!</p>
+    <h2>Contact</h2>
+    <p>Email:workinganubhavchatterjee@gmail.com</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/anubhav-chatterjee-537b1a29a/" target="_blank">Let's Connect</a></p>
+  </section>
+
+  <script>
+    const tools = [
+      { name: 'ChatGPT', logo: 'chatgpt.png', link: 'https://chat.openai.com' },
+      { name: 'Gemini', logo: 'gemini.png', link: 'https://gemini.google.com' },
+      { name: 'LLaMA', logo: 'llama.png', link: 'https://ai.meta.com/llama/' },
+      { name: 'Google Firebase Studio', logo: 'firebase.png', link: 'https://firebase.google.com/' },
+      { name: 'DeepSeek', logo: 'deepseek.png', link: 'https://deepseek.com/' },
+      { name: 'Perplexity', logo: 'perplexity.png', link: 'https://www.perplexity.ai/' },
+      { name: 'Canva Magic Studio', logo: 'canva.png', link: 'https://www.canva.com/magic-studio/' },
+      { name: 'MidJourney', logo: 'midjourney.png', link: 'https://www.midjourney.com' },
+      { name: 'Suno', logo: 'suno.png', link: 'https://www.suno.ai/' }
+    ];
+
+    const carousel = document.getElementById('carousel');
+    let index = 0;
+
+    function showCard(i) {
+      const tool = tools[i];
+      carousel.innerHTML = `
+        <div class="card">
+          <img src="assets/${tool.logo}" alt="${tool.name}">
+          <h3>${tool.name}</h3>
+          <a href="${tool.link}" target="_blank">Visit Tool</a>
+        </div>
+      `;
+    }
+
+    function nextCard() {
+      index = (index + 1) % tools.length;
+      showCard(index);
+    }
+
+    function prevCard() {
+      index = (index - 1 + tools.length) % tools.length;
+      showCard(index);
+    }
+
+    // Auto Rotate
+    setInterval(nextCard, 4000);
+    showCard(index);
+  </script>
+</body>
+</html>

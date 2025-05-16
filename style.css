@@ -1,0 +1,137 @@
+/* Reset & Font */
+body, h1, h2, h3, p, a {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #0e0e0e;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #00bfff;
+  text-decoration: none;
+}
+
+/* Home Section */
+#home {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.home-content {
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+  padding: 20px;
+}
+
+.home-content h1 {
+  font-size: 3.5em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+.home-content p {
+  font-size: 1.5em;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+/* Tools Section */
+#tools {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #1a1a1a, #111);
+  text-align: center;
+  animation: foldEffect 5s ease-in-out infinite alternate;
+}
+
+@keyframes foldEffect {
+  0% { background-position: left; }
+  100% { background-position: right; }
+}
+
+#tools h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+}
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow {
+  font-size: 2.5em;
+  cursor: pointer;
+  padding: 0 20px;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.arrow:hover {
+  color: #00bfff;
+}
+
+.carousel {
+  width: 300px;
+  height: 380px;
+  overflow: hidden;
+}
+
+.card {
+  background: #222;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,255,255,0.2);
+  transition: transform 0.5s ease;
+}
+
+.card img {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  margin-bottom: 15px;
+}
+
+.card a {
+  padding: 10px 15px;
+  background-color: #00bfff;
+  color: white;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* About & Contact Section */
+#about {
+  padding: 80px 20px;
+  background: #0f0f0f;
+  text-align: center;
+}
+
+#about h2 {
+  font-size: 2em;
+  margin: 20px 0;
+}
